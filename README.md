@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lizmat/P5substr.svg?branch=master)](https://travis-ci.org/lizmat/P5substr)
+
 NAME
 ====
 
@@ -8,11 +10,12 @@ SYNOPSIS
 
     use P5substr; # exports substr()
 
-    say substr("foobar"); # 6
-    say substr(Str);      # Str
+    say substr("foobar",3);   # bar
+    say substr("foobar",1,4); # ooba
 
-    $_ = "foobar";
-    say substr;           # 6
+    my $a = "foobar";
+    substr($a,1,2) = "OO";
+    say $a;                   # fOObar
 
 DESCRIPTION
 ===========
