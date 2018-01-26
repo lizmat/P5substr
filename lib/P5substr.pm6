@@ -2,22 +2,30 @@ use v6.c;
 unit module P5substr:ver<0.0.1>;
 
 proto sub substr(|) is export {*}
-multi sub substr(Str() $s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {
-    $l = $s.chars + $l if $l < 0;
-    my $u := $s.substr($o,$l);
-    $s.substr-rw($o,$l) = $r;
+multi sub substr(Str:D \s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {
+    $l = s.chars + $l if $l < 0;
+    my $u := s.substr($o,$l);
+    s.substr-rw($o,$l) = $r;
     $u
 }
-multi sub substr(Str() $s, Int:D $o is copy, Int:D $l is copy = $s.chars - $o) {
-    my $chars = $s.chars;
+multi sub substr(Str:D \s, Int:D $o is copy, Int:D $l is copy = s.chars - $o) {
+    $l = s.chars + $l - (0 max ($o < 0 ?? s.chars + $o !! $o)) if $l < 0;
+
     Proxy.new(
       FETCH => -> $ {
-          $s.substr(
-            (0 max ($o < 0 ?? $chars + $o !! $o)), 
-            (0 max ($l < 0 ?? $chars + $l !! $l))
-          )
+          my $offset = 0 max ($o < 0 ?? s.chars + $o !! $o);
+          s.substr($offset, 0 max ($l < 0 ?? s.chars + $l - $offset !! $l));
       },
       STORE => -> $, \new {
+          if $o < 0 {
+              my $offset = 0 max ($o < 0 ?? s.chars + $o !! $o);
+              s.substr-rw($offset,$l) = new;
+              $o = $o + $l - new.chars;
+          }
+          else {
+              s.substr-rw($o, $l) = new;
+          }
+          $l = new.chars;
       }
     )
 }
@@ -32,11 +40,12 @@ P5substr - Implement Perl 5's substr() built-in
 
   use P5substr; # exports substr()
 
-  say substr("foobar"); # 6
-  say substr(Str);      # Str
+  say substr("foobar",3);   # bar
+  say substr("foobar",1,4); # ooba
 
-  $_ = "foobar";
-  say substr;           # 6
+  my $a = "foobar";
+  substr($a,1,2) = "OO";
+  say $a;                   # fOObar
 
 =head1 DESCRIPTION
 
