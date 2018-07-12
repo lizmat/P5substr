@@ -9,7 +9,7 @@ multi sub substr(Str:D \s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {
     s.substr-rw($o,$l) = $r;
     $u
 }
-multi sub substr(Str:D \s, Int:D $o is copy, Int:D $l is copy = s.chars - $o) {
+multi sub substr(Str:D \s, Int:D $o is copy, Int:D $l is copy = s.chars - $o) is rw {
     $l = s.chars + $l - (0 max ($o < 0 ?? s.chars + $o !! $o)) if $l < 0;
 
     Proxy.new(
