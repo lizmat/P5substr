@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5substr:ver<0.0.3>:auth<cpan:ELIZABETH>;
+unit module P5substr:ver<0.0.4>:auth<cpan:ELIZABETH>;
 
 proto sub substr(|) is export {*}
 multi sub substr(Str:D \s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {

@@ -2,6 +2,9 @@ Revision history for P5substr
 
 {{$NEXT}}
 
+0.0.4  2018-07-13T23:23:53+02:00
+    - "is rw" fix supplied by Aleks-Daniel Jakimenko-Aleksejev
+
 0.0.3  2018-05-21T21:52:29+02:00
     - Added original Perl 5 documentation
     - Added authority information
