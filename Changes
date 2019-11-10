@@ -2,6 +2,9 @@ Revision history for P5substr
 
 {{$NEXT}}
 
+0.0.5  2019-11-10T19:58:04+01:00
+    - Changed Perl 5 to Perl
+
 0.0.4  2018-07-13T23:23:53+02:00
     - "is rw" fix supplied by Aleks-Daniel Jakimenko-Aleksejev
 

@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/lizmat/P5substr.svg?branch=master)](https://travis-ci.org/lizmat/P5substr)
-
 NAME
 ====
 
-P5substr - Implement Perl 5's substr() built-in
+P5substr - Implement Perl's substr() built-in
 
 SYNOPSIS
 ========
@@ -20,10 +18,10 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `substr` function of Perl 5 as closely as possible.
+This module tries to mimic the behaviour of the `substr` function of Perl as closely as possible.
 
-ORIGINAL PERL 5 DOCUMENTATION
-=============================
+ORIGINAL PERL DOCUMENTATION
+===========================
 
     substr EXPR,OFFSET,LENGTH,REPLACEMENT
     substr EXPR,OFFSET,LENGTH
@@ -108,9 +106,9 @@ Source can be located at: https://github.com/lizmat/P5substr . Comments and Pull
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
