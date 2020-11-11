@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5substr;
 
@@ -58,4 +58,4 @@ ok !defined(P5substr::{'&substr'}), 'is &substr externally NOT accessible?';
     }
 }
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

@@ -1,6 +1,6 @@
-use v6.c;
+use v6.*;
 
-unit module P5substr:ver<0.0.5>:auth<cpan:ELIZABETH>;
+unit module P5substr:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
 proto sub substr(|) is export {*}
 multi sub substr(Str:D \s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {
@@ -35,7 +35,7 @@ multi sub substr(Str:D \s, Int:D $o is copy, Int:D $l is copy = s.chars - $o) is
 
 =head1 NAME
 
-P5substr - Implement Perl's substr() built-in
+Raku port of Perl's substr() built-in
 
 =head1 SYNOPSIS
 
@@ -50,8 +50,8 @@ P5substr - Implement Perl's substr() built-in
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of the C<substr> function of Perl
-as closely as possible.
+This module tries to mimic the behaviour of Perl's C<substr> built-in as
+closely as possible in the Raku Programming Language.
 
 =head1 ORIGINAL PERL DOCUMENTATION
 
@@ -137,10 +137,12 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
+
+# vim: expandtab shiftwidth=4

@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5substr - Implement Perl's substr() built-in
+Raku port of Perl's substr() built-in
 
 SYNOPSIS
 ========
@@ -18,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `substr` function of Perl as closely as possible.
+This module tries to mimic the behaviour of Perl's `substr` built-in as closely as possible in the Raku Programming Language.
 
 ORIGINAL PERL DOCUMENTATION
 ===========================
@@ -106,7 +106,7 @@ Source can be located at: https://github.com/lizmat/P5substr . Comments and Pull
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
