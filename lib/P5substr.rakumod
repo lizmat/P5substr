@@ -1,6 +1,6 @@
 use v6.*;
 
-unit module P5substr:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5substr:ver<0.0.7>:auth<zef:lizmat>;
 
 proto sub substr(|) is export {*}
 multi sub substr(Str:D \s, Int:D $o, Int:D $l is copy, Str() $r --> Str:D) {
@@ -130,14 +130,14 @@ closely as possible in the Raku Programming Language.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5substr . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
